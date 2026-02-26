@@ -83,7 +83,7 @@ Penjelasan Code:
 
 Secara teknis, footer dibuat menggunakan elemen semantik <footer> pada HTML untuk menunjukkan bahwa bagian tersebut merupakan penutup halaman. Tampilan dan jarak diatur menggunakan utility class dari Bootstrap seperti py-5 untuk padding, mt-5 untuk margin atas, serta text-center untuk perataan teks. Nama ditampilkan secara dinamis menggunakan Vue JS interpolation {{ name }} sehingga data dapat terhubung langsung dengan Vue instance.
 
-# Platform dan Tools yang Digunakan
+# Platform dan Tools yang Digunakan (Teknologi yang digunakan)
 - HTML
 - CSS
 - Bootstrap 
