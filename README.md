@@ -33,6 +33,8 @@ Section ini merupakan Hero Section yang berisi:
 - Vue JS interpolation `{{ name }}` dan `{{ role }}`
 - `v-for` digunakan untuk menampilkan tag skill
 - Styling tambahan dari `style.css`
+  
+Hero Section merupakan bagian utama yang pertama kali ditampilkan saat website dibuka. Section ini berfungsi sebagai perkenalan singkat mengenai pemilik website, menampilkan identitas, bidang yang ditekuni, serta elemen visual berupa foto profil. Tombol Contact dan Download CV ditambahkan untuk memberikan kesan interaktif, sedangkan daftar skill ditampilkan untuk menunjukkan kemampuan yang dimiliki.
 
 
 ## 2️⃣ About Me Section
@@ -49,6 +51,7 @@ Section ini berisi:
 - Progress bar menggunakan komponen Bootstrap
 - Styling tambahan pada `.skill-card`
 
+Section About Me berfungsi untuk memberikan informasi lebih detail mengenai latar belakang dan minat pemilik website. Pada bagian ini ditampilkan deskripsi diri secara lengkap untuk memperkenalkan profil secara lebih mendalam. Selain itu, terdapat daftar skills yang divisualisasikan dalam bentuk progress bar agar tingkat kemampuan dapat ditampilkan secara lebih menarik dan informatif.
 
 ## 3️⃣ Certificates Section
 
@@ -65,11 +68,20 @@ Section ini menampilkan:
 - Card Bootstrap untuk layout
 - Custom styling `.certificate-card` dan `.cert-img`
 
+Section Certificates bertujuan untuk menampilkan pencapaian dan sertifikasi yang telah diperoleh. Setiap sertifikat ditampilkan dalam bentuk card agar tersusun rapi dan mudah dibaca. Informasi yang ditampilkan meliputi gambar sertifikat, judul pelatihan atau kegiatan, serta instansi penerbit. Layout grid digunakan agar tampilan tetap terstruktur dan responsif di berbagai ukuran layar.
+
 ## 4️⃣ Footer
 
 <img width="1919" height="128" alt="image" src="https://github.com/user-attachments/assets/00dfa066-e983-441f-817e-d025e0045d97" />
 
 Footer berisi copyright dan teknologi yang digunakan.
+
+Penjelasan Code:
+- Menggunakan elemen <footer> HTML
+- Bootstrap utility class (py-5, mt-5, border-top, text-center, text-muted)
+- Vue JS interpolation {{ name }}
+
+Secara teknis, footer dibuat menggunakan elemen semantik <footer> pada HTML untuk menunjukkan bahwa bagian tersebut merupakan penutup halaman. Tampilan dan jarak diatur menggunakan utility class dari Bootstrap seperti py-5 untuk padding, mt-5 untuk margin atas, serta text-center untuk perataan teks. Nama ditampilkan secara dinamis menggunakan Vue JS interpolation {{ name }} sehingga data dapat terhubung langsung dengan Vue instance.
 
 # Platform dan Tools yang Digunakan
 - HTML
