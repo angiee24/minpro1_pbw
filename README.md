@@ -14,12 +14,6 @@ Website ini merupakan website portofolio pribadi milik Angie yang dibuat menggun
 
 Struktur folder MINPRO_PBW terdiri dari file utama index.html dan style.css, serta satu folder pendukung bernama assets. File index.html berfungsi sebagai halaman utama website yang berisi struktur dan isi tampilan, sedangkan style.css digunakan untuk mengatur desain dan tampilan visual seperti warna, layout, dan responsive. Folder assets digunakan untuk menyimpan seluruh gambar yang dipakai di website, seperti foto profil dan gambar sertifikat. Struktur ini sudah rapi dan sesuai standar website statis sederhana.
 
-## Tampilan Full Website
-
-<img width="1208" height="4499" alt="fullscreenminpro1" src="https://github.com/user-attachments/assets/f7c6bd6d-c88b-4900-8554-9e80a4dbdee0" />
-
-Gambar tersebut menampilkan tampilan penuh website portofolio Angie yang terdiri dari beberapa section utama, yaitu Hero Section dengan perkenalan singkat, tombol aksi, dan foto profil dalam bentuk card, dilanjutkan dengan About Me yang berisi deskripsi diri dan progress bar skills, serta Certificates yang menampilkan sertifikat dalam bentuk card tersusun rapi dalam layout grid. Di bagian bawah terdapat footer dengan informasi copyright dan teknologi yang digunakan. Secara keseluruhan, desain website terlihat bersih, modern, terstruktur, dan responsif.
-
 # Tampilan Website (Section)
 
 ## 1️⃣ Home Section
