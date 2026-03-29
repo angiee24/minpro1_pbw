@@ -1,21 +1,51 @@
+<?php
+$host = "localhost";
+$user = "root";      
+$pass = "";           
+$db   = "portofolio_angie";
+
+$conn = new mysqli($host, $user, $pass, $db);
+
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+$result_profile = $conn->query("SELECT * FROM profile LIMIT 1");
+$profile = $result_profile->fetch_assoc();
+
+$result_tags = $conn->query("SELECT * FROM tags");
+$tags = [];
+while($row = $result_tags->fetch_assoc()) {
+    $tags[] = $row['tag_name'];
+}
+
+$result_skills = $conn->query("SELECT * FROM skills");
+$skills = [];
+while($row = $result_skills->fetch_assoc()) {
+    $skills[] = $row;
+}
+
+$result_certs = $conn->query("SELECT * FROM certificates");
+$certificates = [];
+while($row = $result_certs->fetch_assoc()) {
+    $certificates[] = $row;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio - Angie</title>
+    <title>Portofolio - <?php echo $profile['name']; ?></title>
 
-    <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- GOOGLE FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- VUE JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
@@ -23,7 +53,6 @@
 
 <div id="app">
 
-    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light py-4">
         <div class="container">
 
@@ -63,7 +92,6 @@
     </nav>
 
 
-    <!-- HERO SECTION -->
     <header id="home" class="hero-section py-5">
         <div class="container">
             <div class="row align-items-center">
@@ -130,7 +158,6 @@
     </header>
 
 
-    <!-- ABOUT SECTION -->
     <section id="about" class="py-5 section-margin">
         <div class="container">
             <div class="row g-5 align-items-center">
@@ -172,7 +199,6 @@
         </div>
     </section>
 
-    <!-- CERTIFICATES SECTION -->
     <section id="certificates" class="py-5 section-margin">
         <div class="container text-center">
 
@@ -207,7 +233,6 @@
     </section>
 
 
-    <!-- FOOTER -->
     <footer class="py-5 mt-5 border-top text-center text-muted">
         <p>© 2026 {{ name }}. Built with Bootstrap 5 & Vue JS</p>
     </footer>
@@ -215,41 +240,22 @@
 </div>
 
 
-<!-- BOOTSTRAP JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- VUE APP -->
 <script>
 const { createApp } = Vue;
-
 createApp({
     data() {
         return {
-            name: 'Angie',
-            role: 'Information Systems Student',
-            bioShort: 'I create interactive and responsive websites using modern web technologies like Vue JS and Bootstrap.',
-            bioFull: "Hello! I'm Angie, an Information Systems student at Universitas Mulawarman. I specialize in building user-friendly interfaces and exploring Data Science.",
-
-            tags: ['HTML5', 'CSS3', 'Bootstrap 5', 'Vue.Js', 'JavaScript'],
-
-            skills: [
-                { name: 'Python', level: 90, color: '#2f426c' },
-                { name: 'R', level: 85, color: '#324667' },
-                { name: 'SQL', level: 75, color: '#8fbcae' }
-            ],
-
-            certificates: [
-                { title: 'Anggota Departemen Professional Skill Development', issuer: 'INFORSA UNMUL', image: 'Sertif_Inforsa.png' },
-                { title: 'Pengenalan ke Logika Pemrograman', issuer: 'Dicoding Indonesia', image: 'sertif_logika.png' },
-                { title: 'Belajar Dasar Data Science', issuer: 'Dicoding Indonesia', image: 'Sertif_DasarDS.png' },
-                { title: 'Belajar Penerapan Data Science dengan Microsoft Fabric', issuer: 'Dicoding Indonesia', image: 'Sertif_DS.png' },
-                { title: 'Membangun Aplikasi Gen AI dengan Microsoft Azure', issuer: 'Dicoding Indonesia', image: 'Sertif_GenAi.png' },
-                { title: 'Belajar Dasar Visualisasi Data', issuer: 'Dicoding Indonesia', image: 'sertif_visualisasi.png' }
-            ]
+            name: <?php echo json_encode($profile['name']); ?>,
+            role: <?php echo json_encode($profile['role']); ?>,
+            bioShort: <?php echo json_encode($profile['bio_short']); ?>,
+            bioFull: <?php echo json_encode($profile['bio_full']); ?>,
+            tags: <?php echo json_encode($tags); ?>,
+            skills: <?php echo json_encode($skills); ?>,
+            certificates: <?php echo json_encode($certificates); ?>
         };
     }
 }).mount('#app');
 </script>
-
 </body>
 </html>
